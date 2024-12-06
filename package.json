@@ -10,7 +10,9 @@
 		"typescript": "5.0.0"
 	},
 	"dependencies": {
+		"elysia": "1.1.26",
 		"pg": "8.13.1",
+		"pino": "9.5.0",
 		"reflect-metadata": "0.2.2",
 		"typeorm": "0.3.20",
 		"zod": "3.23.8"

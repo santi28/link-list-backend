@@ -1,9 +1,14 @@
-import datasource from "./config/datasource";
+import Elysia from "elysia";
+import config from "./config/config";
+
+const elysia = new Elysia();
 
 try {
-	await datasource.initialize();
-	console.log("Database connection established");
+	elysia.get("/", () => "Hello World!");
+
+	elysia.listen(config.PORT);
+	console.log(`Server running at ${elysia.server?.url}`);
 } catch (error) {
-	console.error("Database connection failed:", error);
+	console.error(error);
 	process.exit(1);
 }

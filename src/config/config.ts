@@ -1,6 +1,8 @@
 import { z } from "zod";
 
 const envSchema = z.object({
+	PORT: z.number().default(3000),
+
 	DATABASE_HOST: z.string().min(1, "Database host is required"),
 	DATABASE_PORT: z.number().default(5432),
 	DATABASE_USER: z.string().min(1, "Database username is required"),
