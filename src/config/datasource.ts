@@ -3,6 +3,7 @@ import { fileURLToPath } from "node:url";
 import { DataSource } from "typeorm";
 
 import config from "./config";
+import { User } from "../entities/user.entity";
 
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
@@ -22,6 +23,6 @@ export default new DataSource({
 
 	// Database options
 	synchronize: true,
-	entities: [],
+	entities: [User],
 	migrations: [`${__dirname}/migrations/*.ts`],
 });
