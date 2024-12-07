@@ -6,7 +6,10 @@ const elysia = new Elysia();
 try {
 	elysia.get("/", () => "Hello World!");
 
+	elysia.use(import("./routes/auth.router"));
+
 	elysia.listen(config.PORT);
+
 	console.log(`Server running at ${elysia.server?.url}`);
 } catch (error) {
 	console.error(error);
